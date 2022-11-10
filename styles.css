@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+  --success: rgb(18, 192, 18);
+  --warning: rgb(255, 129, 12);
+  --error: rgb(248, 3, 3);
+  --success-light: rgba(18, 192, 18, 0.4);
+  --warning-light: rgba(255, 129, 12, 0.4);
+  --error-light: rgba(248, 3, 3, 0.4);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ecf0f1;
+}
+.control button {
+  padding: 8px 16px;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 18px;
+  margin: 0 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.control button:hover {
+  transform: scale(1.05);
+}
+.success {
+  background: var(--success);
+}
+.warning {
+  background: var(--warning);
+}
+.error {
+  background: var(--error);
+}
+#toasts {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.toast {
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 20px;
+
+  overflow: hidden;
+  animation: slide_show 2s ease forwards;
+}
+.toast i {
+  margin: 0 10px;
+}
+.toast .coutdown {
+  background: var(--success);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  animation: countdown 3s ease;
+}
+.toast.success {
+  background: var(--success-light);
+  border-left: 6px solid var(--success);
+}
+.toast.warning {
+  background: var(--warning-light);
+  border-left: 6px solid var(--warning);
+}
+.toast.error {
+  background: var(--error-light);
+  border-left: 6px solid var(--error);
+}
+@keyframes countdown {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes slide_show {
+  0% {
+    transform: translate(100%);
+  }
+  25% {
+    transform: translate(-10%);
+  }
+  50% {
+    transform: translate(0%);
+  }
+  100% {
+    transform: translate(0%);
+  }
+}
+@keyframes slide_hide {
+  0% {
+    transform: translateX(-10%);
+  }
+  25% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
