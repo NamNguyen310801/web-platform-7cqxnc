@@ -54,7 +54,7 @@ body {
   border-radius: 6px;
   color: white;
   font-size: 20px;
-
+  margin-bottom: 10px;
   overflow: hidden;
   animation: slide_show 2s ease forwards;
 }
@@ -74,13 +74,22 @@ body {
   background: var(--success-light);
   border-left: 6px solid var(--success);
 }
+.toast.success .coutdown {
+  background: var(--success);
+}
 .toast.warning {
   background: var(--warning-light);
   border-left: 6px solid var(--warning);
 }
+.toast.warning .coutdown {
+  background: var(--warning);
+}
 .toast.error {
   background: var(--error-light);
   border-left: 6px solid var(--error);
+}
+.toast.error .coutdown {
+  background: var(--error);
 }
 @keyframes countdown {
   0% {
